@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.Text.Classification;
 using Microsoft.VisualStudio.Utilities;
 using System.ComponentModel.Composition;
+using System.Windows;
 
 namespace Color.Token
 {
@@ -1747,6 +1748,45 @@ namespace Color.Token
 		public Format_Token_while()
 		{
 			DisplayName = "C++ Token: \"while\"";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.Flow;
+		}
+	}
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Token.stcgoal")]
+	[Name("Token.stcgoal")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = Priority.High)]
+	internal sealed class Format_Token_stcgoal
+	:
+		ClassificationFormatDefinition
+	{
+		public Format_Token_stcgoal()
+		{
+			DisplayName = "STC Token: \"stcgoal\"";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.Flow;
+			//MessageBox.Show("STCGoal created");
+		}
+	}
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Token.stcissue")]
+	[Name("Token.stcissue")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Keyword)]
+	[UserVisible(true)]
+	[Order(After = Priority.High)]
+	internal sealed class Format_Token_stcissue
+	:
+		ClassificationFormatDefinition
+	{
+		public Format_Token_stcissue()
+		{
+			DisplayName = "STC Token: \"stcissue\"";
 
 			BackgroundCustomizable = false;
 			ForegroundColor = Default.Colors.Flow;

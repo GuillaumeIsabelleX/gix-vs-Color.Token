@@ -472,6 +472,16 @@ namespace Color.Token
 		private static readonly ClassificationTypeDefinition
 		Definition_Token_while;
 
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Token.stcgoal")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Token_stcgoal;
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Token.stcissue")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Token_stcissue;
+
 		#pragma warning restore IDE0051
 		#pragma warning restore 169
 	}

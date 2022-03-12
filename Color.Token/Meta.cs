@@ -95,7 +95,9 @@
 			"void",
 			"volatile",
 			"wchar_t",
-			"while"
+			"while",
+			"stcgoal",
+			"@STCIssue"
 		};
 	}
 }
